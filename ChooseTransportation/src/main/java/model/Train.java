@@ -1,7 +1,7 @@
 package main.java.model;
 
-public class Train extends Transportation {
-    public Train(int price) {
-        super(price);
+public class Train implements Transportation {
+    public int getPrice() {
+        return 400;
     }
 }
