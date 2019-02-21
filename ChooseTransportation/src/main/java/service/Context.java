@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Choose {
     public static void main(String[] args) {
         Transportation selfDriving = new SelfDriving(500);
-        Transportation bus = new Bus(300);
+                    Transportation bus = new Bus(300);
         Transportation train = new Train(400);
         Transportation plane = new SelfDriving(1000);
 
