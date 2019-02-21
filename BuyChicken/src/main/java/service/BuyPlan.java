@@ -1,25 +1,30 @@
 package main.java.service;
 
 import main.java.model.Chick;
-import main.java.model.Chicken;
 import main.java.model.Cock;
 import main.java.model.Hen;
 
 public class BuyPlan {
-    public static void main(String[] args) {
-        Chicken chick = new Chick(1.0/3);
-        Chicken cock = new Cock(5);
-        Chicken hen = new Hen(3);
-        int maxOfCock=cock.getMaxCount(100);
-        int maxOfHen=hen.getMaxCount(100);
-        for(int cockNum=0;cockNum<=maxOfCock;cockNum++){
-            if((100-7*cockNum)%4==0){
-                int henNum = (100-7*cockNum)/4;
-                if(0<=henNum && henNum<=maxOfHen){
-                    int  chickNum=100-cockNum-henNum;
-                    System.out.println("小鸡："+chickNum+",母鸡："+henNum+"，公鸡："+cockNum);
+    public static void buyChicken(int money, int count) {
+        Chick chick = new Chick();
+        Cock cock = new Cock();
+        Hen hen = new Hen();
+        chick.setPrice();
+        cock .setPrice();
+        hen.setPrice();
+        double chickPrice = chick .getPrice();
+        double cockPrice = cock.getPrice();
+        double henPrice = hen.getPrice();
+        int maxOfCock = cock.getMaxCount(100);
+        int maxOfHen = hen.getMaxCount(100);
+        for (int i = 0; i <= maxOfCock; i++) {
+            for (int j = 0; j <= maxOfHen; j++) {
+                int chickNum = count - i - j;
+                if (i * cockPrice + j * henPrice + chickNum * chickPrice == money) {
+                    System.out.println("买小鸡：" + chickNum + "只,母鸡：" + j + "只，公鸡：" + i+"只");
                 }
             }
+
         }
     }
 }
