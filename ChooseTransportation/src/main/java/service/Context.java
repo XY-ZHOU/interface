@@ -18,6 +18,14 @@ public class Context {
         allTranspots.add(plane.getPrice());
     }
 
-
+    public static ArrayList getSatisfiedTransportstion(int money) {
+        ArrayList<Integer> satisfiedTransports = new ArrayList<>();
+        for (int i = 0; i < allTranspots.size(); i++) {
+            if (allTranspots.get(i) <= money) {
+                satisfiedTransports.add(allTranspots.get(i));
+            }
+        }
+        return satisfiedTransports;
+    }
 }
 
