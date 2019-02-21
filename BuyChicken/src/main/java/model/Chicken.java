@@ -1,10 +1,12 @@
 package main.java.model;
 
-public class Chicken {
-    private double price;
+public abstract class Chicken {
+    protected double price;
 
-    public Chicken(double price) {
-        this.price = price;
+    public abstract void setPrice();
+
+    public double getPrice() {
+        return price;
     }
 
     public int getMaxCount(int money) {
